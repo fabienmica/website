@@ -960,6 +960,8 @@ section,
 }
 
 .testimonials .testimonial-item {
+  display: flex;
+  align-items: center;
   box-sizing: content-box;
   text-align: center;
   min-height: 100px;
