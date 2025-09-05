@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page_title }}</title>
-</head>
-<body>
+
+{% include '_head.liquid' %}
+
+<body class="index-page">
 
   {% include '_header.liquid' %}
 
@@ -15,5 +14,8 @@
 
   {% include '_footer.liquid' %}
 
+  {% include '_bottom.liquid' %}
+
 </body>
+
 </html>
