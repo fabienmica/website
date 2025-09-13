@@ -43,38 +43,27 @@
             href: "portfolio-enwaii.html",
             title: "Enwaii" %}
 
-        <div class="col-lg-4 col-md-6 col-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-            <img src="assets/img/portfolio/app-2.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <p>Immersive apps</p>
-                <a href="http://www.enwaii.com" title="Enwaii" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-            </div>
-        </div><!-- End Portfolio Item -->
+        {% include 'common/isotope/_isotope-item.liquid', 
+            src: "assets/img/portfolio/app-2.png",
+            filter: "filter-app",
+            text: "Immersive apps",
+            href: "http://www.enwaii.com",
+            title: "Enwaii" %}
 
-        <div class="col-lg-4 col-md-6 col-6 portfolio-item isotope-item filter-vfx">
-            <div class="portfolio-content h-100">
-            <img src="assets/img/portfolio/vfx-1.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <p>Pioneering Reality Capture</p>
-                <a href="assets/img/portfolio/vfx-1.png" title="Ad 1" data-gallery="portfolio-gallery-ad" class="glightbox preview-link"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-            </div>
-        </div><!-- End Portfolio Item -->
+        {% include 'common/isotope/_isotope-item.liquid', 
+            src: "assets/img/portfolio/vfx-1.png",
+            filter: "filter-vfx",
+            text: "Pioneering Reality Capture",
+            href: "portfolio-details.html",
+            title: "More Details" %}
 
-        <div class="col-lg-4 col-md-6 col-6 portfolio-item isotope-item filter-vr">
-            <div class="portfolio-content h-100">
-            <img src="assets/img/portfolio/vr-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <p>Groundbreaking Virtual Reality Experience</p>
-                <a href="assets/img/portfolio/vr-1.jpg" title="VR 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-            </div>
-        </div><!-- End Portfolio Item -->
-
+        {% include 'common/isotope/_isotope-item.liquid', 
+            src: "assets/img/portfolio/vr-1.jpg",
+            filter: "filter-vr",
+            text: "Groundbreaking Virtual Reality Experience",
+            href: "portfolio-details.html",
+            title: "More Details" %}
+        
         <div class="col-lg-4 col-md-6 col-6 portfolio-item isotope-item filter-vr">
             <div class="portfolio-content h-100">
             <img src="assets/img/portfolio/vr-2.jpg" class="img-fluid" alt="">
