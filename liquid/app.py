@@ -12,6 +12,6 @@ raw_html = template.render(name="Fabien", page_title="Home")
 # document = html5lib.parse(raw_html, treebuilder="lxml", namespaceHTMLElements=False)
 # pretty_html = etree.tostring(document, pretty_print=True, encoding="unicode")
 
-with open("output.html", "w") as f:
+with open("generated/index.html", "w") as f:
     #f.write(pretty_html)    
     f.write(raw_html)
