@@ -5,7 +5,7 @@ import html5lib
 def generateIndex(env, name):
     # Render your Liquid template
     template = env.get_template(name + ".liquid")
-    raw_html = template.render(name="Fabien", page_title="Home")
+    raw_html = template.render()
 
     # Parse and beautify the HTML -> TODO at the end to fix everything
     # document = html5lib.parse(raw_html, treebuilder="lxml", namespaceHTMLElements=False)
@@ -18,3 +18,4 @@ def generateIndex(env, name):
 env = Environment(loader=CachingFileSystemLoader("templates"))
 
 generateIndex(env, "index")
+generateIndex(env, "portfolio-enwaii")
