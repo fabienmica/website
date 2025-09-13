@@ -2,10 +2,10 @@ from liquid import Environment, CachingFileSystemLoader
 from lxml import etree
 import html5lib
 
-def generateIndex(env, name):
+def generateIndex(env, name, title):
     # Render your Liquid template
     template = env.get_template(name + ".liquid")
-    raw_html = template.render()
+    raw_html = template.render(title=title)
 
     # Parse and beautify the HTML -> TODO at the end to fix everything
     # document = html5lib.parse(raw_html, treebuilder="lxml", namespaceHTMLElements=False)
@@ -17,5 +17,5 @@ def generateIndex(env, name):
 
 env = Environment(loader=CachingFileSystemLoader("templates"))
 
-generateIndex(env, "index")
-generateIndex(env, "portfolio-enwaii")
+generateIndex(env, "index", title="")
+generateIndex(env, "portfolio-enwaii", title="Enwaii")
