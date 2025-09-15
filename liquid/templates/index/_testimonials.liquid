@@ -1,39 +1,34 @@
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials section light-background">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
     <h2>Clients</h2>
-    </div><!-- End Section Title -->
+  </div>
+  <!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="swiper init-swiper">
-       
-        {% include "common/swiper/_swiper-config.liquid"%}
+      {% include 'common/swiper/_swiper-config.liquid' %}
 
-        <div class="swiper-wrapper">
+      <div class="swiper-wrapper">
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-1.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-1.png"%}
-        
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-2.png"%}
-  
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-3.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-2.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-4.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-3.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-5.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-4.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-6.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-5.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-7.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-6.png' %}
 
-        {% include 'common/swiper/_swiper-slide.liquid', src: "assets/img/testimonials/client-8.png"%}
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-7.png' %}
 
-        </div>
-        <div class="swiper-pagination"></div>
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-8.png' %}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-
-    </div>
-
-</section><!-- /Testimonials Section -->
+  </div>
+</section>
+<!-- /Testimonials Section -->

@@ -1,18 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  {% include 'common/_head.liquid', title: title %}
 
-{% include 'common/_head.liquid', title: title %}
+  <body class="portfolio-details-page">
+    {% include 'common/_header.liquid' %}
 
-<body class="portfolio-details-page">
+    {% include 'portfolio/main.liquid', title: title %}
 
-  {% include 'common/_header.liquid' %}
+    {% include 'common/_footer.liquid' %}
 
-  {% include 'portfolio/main.liquid', title: title %}
-
-  {% include 'common/_footer.liquid' %}
-
-  {% include 'common/_bottom.liquid' %}
-
-</body>
-
+    {% include 'common/_bottom.liquid' %}
+  </body>
 </html>

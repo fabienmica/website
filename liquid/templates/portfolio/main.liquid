@@ -1,10 +1,8 @@
 <main class="main">
+  {% include 'portfolio/_title.liquid', title: title %}
 
-{% include 'portfolio/_title.liquid', title: title %}
-
-{% case title %}
-  {% when "Enwaii" %}
-    {%- include 'portfolio/_details-enwaii.liquid', title: title -%}
-{% endcase %}
-
+  {% case title %}
+    {% when 'Enwaii' %}
+      {%- include 'portfolio/_details-enwaii.liquid', title: title -%}
+  {% endcase %}
 </main>

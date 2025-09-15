@@ -1,18 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  {% include 'common/_head.liquid', title: title %}
 
-{% include 'common/_head.liquid', title: title %}
+  <body class="index-page">
+    {% include 'common/_header.liquid' %}
 
-<body class="index-page">
+    {% include 'index/main.liquid' %}
 
-  {% include 'common/_header.liquid' %}
-  
-  {% include 'index/main.liquid' %}
+    {% include 'common/_footer.liquid' %}
 
-  {% include 'common/_footer.liquid' %}
-
-  {% include 'common/_bottom.liquid' %}
-
-</body>
-
+    {% include 'common/_bottom.liquid' %}
+  </body>
 </html>
