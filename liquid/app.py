@@ -1,6 +1,7 @@
 from liquid import Environment, CachingFileSystemLoader
 from lxml import etree
 import html5lib
+import shutil
 
 def generateIndex(env, name, title, file):
     # Render your Liquid template
@@ -8,14 +9,19 @@ def generateIndex(env, name, title, file):
     raw_html = template.render(title=title)
 
     # Parse and beautify the HTML -> TODO at the end to fix everything
-    # document = html5lib.parse(raw_html, treebuilder="lxml", namespaceHTMLElements=False)
-    # pretty_html = etree.tostring(document, pretty_print=True, encoding="unicode")
+    #document = html5lib.parse(raw_html, treebuilder="lxml", namespaceHTMLElements=False)
+    #pretty_html = etree.tostring(document, pretty_print=True, encoding="unicode")
 
-    with open("generated/" + file, "w") as f:
+    file_path_generated = "generated/" + file
+    with open(file_path_generated, "w") as f:
         #f.write(pretty_html)    
         f.write(raw_html)
+    
+    #Copy file directly
+    shutil.copy(file_path_generated, "../alquanti")
 
 env = Environment(loader=CachingFileSystemLoader("templates"))
 
 generateIndex(env, "index", title="Fabien Micallef", file="index.html")
 generateIndex(env, "portfolio-details", title="Enwaii", file="portfolio-enwaii.html")
+generateIndex(env, "portfolio-details", title="Hold The World", file="portfolio-hold-the-world.html")
