@@ -3,8 +3,26 @@
 
   {% case title %}
     {% when 'Enwaii' %}
-      {%- include 'portfolio/_details-enwaii.liquid', title: title -%}
+      {% assign part1 = 'portfolio/_details-enwaii-1.liquid' %}
+      {% assign part2 = 'portfolio/_details-enwaii-2.liquid' %}
     {% when 'Hold The World' %}
-      {%- include 'portfolio/_details-hold-the-world.liquid', title: title -%}
+      {% assign part1 = 'portfolio/_details-htw-1.liquid' %}
+      {% assign part2 = 'portfolio/_details-htw-2.liquid' %}
   {% endcase %}
+
+  <!-- Portfolio Details Section -->
+  <section id="portfolio-details" class="portfolio-details section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+        <div class="col-lg-8 order-2 order-lg-1">
+          {% include part1 %}
+        </div>
+
+        <div class="col-lg-4 order-1 order-lg-2">
+          {% include part2 %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Portfolio Details Section -->
 </main>
