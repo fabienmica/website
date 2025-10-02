@@ -27,3 +27,5 @@ generateIndex(env, "portfolio-details", title="Enwaii", file="portfolio-enwaii.h
 generateIndex(env, "portfolio-details", title="Hold The World", file="portfolio-hold-the-world.html")
 generateIndex(env, "portfolio-details", title="VRsatile", file="portfolio-vrsatile.html")
 generateIndex(env, "portfolio-details", title="Pioneering Reality Capture", file="portfolio-pioneering.html")
+generateIndex(env, "portfolio-details", title="Immersive projects", file="portfolio-immersive.html")
+generateIndex(env, "portfolio-details", title="Commercials", file="portfolio-commercials.html")
