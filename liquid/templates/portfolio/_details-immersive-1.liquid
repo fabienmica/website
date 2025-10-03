@@ -11,33 +11,6 @@
   </div>
   <!-- End Section Title -->
 
-  <div
-    class="container"
-    data-aos="fade-up"
-    data-aos-delay="100"
-  >
-    <div class="swiper init-swiper">
-      {% include 'common/swiper/_swiper-config.liquid' %}
-
-      <div class="swiper-wrapper">
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_2_B.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_3_C.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/alexander.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/harry_potter_4.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/batman_begins.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/finding_neverland_th02.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/2046.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/the_prestige_th02.jpg' %}
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
+  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects %}
 </section>
 <!-- /Behind-the-scenes Section -->

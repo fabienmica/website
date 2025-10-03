@@ -6,29 +6,6 @@
   </div>
   <!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="swiper init-swiper">
-      {% include 'common/swiper/_swiper-config.liquid' %}
-
-      <div class="swiper-wrapper">
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-1.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-2.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-3.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-4.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-5.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-6.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-7.png' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/testimonials/client-8.png' %}
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
+  {% include 'common/swiper/_swiper.liquid', swiper_images: clients %}
 </section>
 <!-- /Testimonials Section -->

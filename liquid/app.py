@@ -25,10 +25,13 @@ def generateIndex(env, name, file, **kwargs):
 with open("data/buf_projects.json") as f:
     buf_projects = json.load(f)
 
+with open("data/clients.json") as f:
+    clients = json.load(f)
+
 
 env = Environment(loader=CachingFileSystemLoader("templates"))
 
-generateIndex(env, "index", file="index.html", title="Fabien Micallef")
+generateIndex(env, "index", file="index.html", title="Fabien Micallef", clients=clients)
 generateIndex(env, "portfolio-details", file="portfolio-enwaii.html", title="Enwaii")
 generateIndex(env, "portfolio-details", file="portfolio-hold-the-world.html", title="Hold The World")
 generateIndex(env, "portfolio-details", file="portfolio-vrsatile.html", title="VRsatile")
