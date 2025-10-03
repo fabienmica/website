@@ -1,0 +1,16 @@
+<div
+  class="container"
+  data-aos="fade-up"
+  data-aos-delay="100"
+>
+  <div class="swiper init-swiper">
+    {% include 'common/swiper/_swiper-config.liquid' %}
+
+    <div class="swiper-wrapper">
+      {% for img in swiper_images %}
+        {% include 'common/swiper/_swiper-slide.liquid', src: img.src %}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

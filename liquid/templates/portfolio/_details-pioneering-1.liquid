@@ -8,28 +8,10 @@
     <!--
       <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     -->
-    {% for member in buf_projects %}
-      <h2>{{ member.src }}</h2>
-    {% endfor %}
   </div>
   <!-- End Section Title -->
 
-  <div
-    class="container"
-    data-aos="fade-up"
-    data-aos-delay="100"
-  >
-    <div class="swiper init-swiper">
-      {% include 'common/swiper/_swiper-config.liquid' %}
+  {% include 'common/swiper/_swiper.liquid' swiper_images: buf_projects %}
 
-      <div class="swiper-wrapper">
-        {% for member in buf_projects %}
-          <h2>{{ member.src }}</h2>
-          {% include 'common/swiper/_swiper-slide.liquid', src: member.src %}
-        {% endfor %}
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
 </section>
 <!-- /Behind-the-scenes Section -->
