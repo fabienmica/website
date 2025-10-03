@@ -1,0 +1,43 @@
+{% include 'portfolio/_video.liquid', video: 'https://player.vimeo.com/video/1123133575?title=0&byline=0&portrait=0' %}
+
+<!-- Behind-the-scenes Section -->
+<section id="behind-the-scenes" class="portfolio section light-background">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Behind The Scenes</h2>
+    <!--
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    -->
+  </div>
+  <!-- End Section Title -->
+
+  <div
+    class="container"
+    data-aos="fade-up"
+    data-aos-delay="100"
+  >
+    <div class="swiper init-swiper">
+      {% include 'common/swiper/_swiper-config.liquid' %}
+
+      <div class="swiper-wrapper">
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_2_B.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_3_C.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/alexander.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/harry_potter_4.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/batman_begins.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/finding_neverland_th02.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/2046.jpg' %}
+
+        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/the_prestige_th02.jpg' %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<!-- /Behind-the-scenes Section -->
