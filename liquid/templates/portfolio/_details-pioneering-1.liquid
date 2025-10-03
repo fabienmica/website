@@ -8,6 +8,9 @@
     <!--
       <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     -->
+    {% for member in buf_projects %}
+      <h2>{{ member.src }}</h2>
+    {% endfor %}
   </div>
   <!-- End Section Title -->
 
@@ -20,21 +23,10 @@
       {% include 'common/swiper/_swiper-config.liquid' %}
 
       <div class="swiper-wrapper">
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_2_B.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/matrix_3_C.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/alexander.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/harry_potter_4.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/batman_begins.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/finding_neverland_th02.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/2046.jpg' %}
-
-        {% include 'common/swiper/_swiper-slide.liquid', src: 'assets/img/studio/the_prestige_th02.jpg' %}
+        {% for member in buf_projects %}
+          <h2>{{ member.src }}</h2>
+          {% include 'common/swiper/_swiper-slide.liquid', src: member.src %}
+        {% endfor %}
       </div>
       <div class="swiper-pagination"></div>
     </div>
