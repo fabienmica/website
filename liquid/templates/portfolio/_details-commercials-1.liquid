@@ -2,6 +2,10 @@
 <section id="flying-hotel" class="portfolio section light-background">
   <div class="container section-title" data-aos="fade-up">
     <h2>Flying Hotel</h2>
+    {% include 'portfolio/_video.liquid',
+      video: 'https://player.vimeo.com/video/106021328?title=0&byline=0&portrait=0'
+    %}
+
     This commercial highlights the very place where the successful holidays and insurance company Saga started : a
     beautiful hotel in Folkestone.
 
@@ -18,7 +22,7 @@
     wheater condition where the lighting varies greatly.
   </div>
 
-  {% include 'portfolio/_video.liquid', video: 'https://player.vimeo.com/video/106021328?title=0&byline=0&portrait=0' %}
+  {% include 'common/swiper/_swiper.liquid', swiper_images: flying_hotel %}
 </section>
 <!-- /Flying hotel Section -->
 
@@ -34,6 +38,5 @@
   <!-- End Section Title -->
 
   {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects %}
-
 </section>
 <!-- /Behind-the-scenes Section -->
