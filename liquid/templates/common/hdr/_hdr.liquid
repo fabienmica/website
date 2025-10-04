@@ -1,0 +1,19 @@
+  <h2 class="mb-4">HDR Image Viewer</h2>
+
+
+  <img id="hdr-image" src="assets/img/johnnie/hdr_4.jpg" alt="HDR Image"class="img-fluid rounded shadow">
+
+  <div class="mt-4">
+    <label for="exposureSlider" class="form-label">Exposure Level</label>
+    <input type="range" class="form-range" min="1" max="6" step="1" id="exposureSlider">
+  </div>
+
+<script>
+  const slider = document.getElementById('exposureSlider');
+  const image = document.getElementById('hdr-image');
+
+  slider.addEventListener('input', () => {
+    const level = slider.value;
+    image.src = `assets/img/johnnie/hdr_${level}.jpg`;
+  });
+</script>
