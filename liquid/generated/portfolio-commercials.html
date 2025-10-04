@@ -450,28 +450,35 @@
         references, earning praise from Colin, who noted the photogrammetry stills were invaluable for textures and
         visual planning.
       </p>
-      
-        <h2 class="mb-4">HDR Image Viewer</h2>
 
+      <h2 class="mb-4">HDR Image Viewer</h2>
+<div class="hdr-container">
+  <!-- Preload all exposures -->
+  <img src="assets/img/johnnie/hdr_1.jpg" class="hdr-image img-fluid" id="img_1">
+  <img src="assets/img/johnnie/hdr_2.jpg" class="hdr-image img-fluid" id="img_2">
+  <img src="assets/img/johnnie/hdr_3.jpg" class="hdr-image img-fluid active" id="img_3">
+  <img src="assets/img/johnnie/hdr_4.jpg" class="hdr-image img-fluid" id="img_4">
+  <img src="assets/img/johnnie/hdr_5.jpg" class="hdr-image img-fluid" id="img_5">
+  <img src="assets/img/johnnie/hdr_6.jpg" class="hdr-image img-fluid" id="img_6">
+</div>
 
-  <img id="hdr-image" src="assets/img/johnnie/hdr_4.jpg" alt="HDR Image"class="img-fluid rounded shadow">
-
-  <div class="mt-4">
-    <label for="exposureSlider" class="form-label">Exposure Level</label>
-    <input type="range" class="form-range" min="1" max="6" step="1" id="exposureSlider">
-  </div>
+<div class="mt-4">
+  <label for="exposureSlider" class="form-label">Exposure Level</label>
+  <input type="range" class="form-range" min="1" max="6" step="1" id="exposureSlider" value="3">
+</div>
 
 <script>
   const slider = document.getElementById('exposureSlider');
-  const image = document.getElementById('hdr-image');
+  const images = document.querySelectorAll('.hdr-image');
 
   slider.addEventListener('input', () => {
     const level = slider.value;
-    image.src = `assets/img/johnnie/hdr_${level}.jpg`;
+    images.forEach((img) => img.classList.remove('active'));
+    document.getElementById(`img_${level}`).classList.add('active');
   });
 </script>
 
-      
+
       <p>
         In order to experience all the information contained in the HDR photograph displayed below, please move the
         slider under the photograph.
