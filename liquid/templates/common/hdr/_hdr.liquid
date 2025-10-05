@@ -1,26 +1,77 @@
 <h2 class="mb-4">HDR Image Viewer</h2>
-<div class="hdr-container">
-  <!-- Preload all exposures -->
-  <img src="assets/img/johnnie/hdr_1.jpg" class="hdr-image img-fluid" id="img_1">
-  <img src="assets/img/johnnie/hdr_2.jpg" class="hdr-image img-fluid" id="img_2">
-  <img src="assets/img/johnnie/hdr_3.jpg" class="hdr-image img-fluid active" id="img_3">
-  <img src="assets/img/johnnie/hdr_4.jpg" class="hdr-image img-fluid" id="img_4">
-  <img src="assets/img/johnnie/hdr_5.jpg" class="hdr-image img-fluid" id="img_5">
-  <img src="assets/img/johnnie/hdr_6.jpg" class="hdr-image img-fluid" id="img_6">
+
+<div class="canvas-wrapper">
+  <canvas id="hdrCanvas" class="rounded shadow w-100"></canvas>
 </div>
 
-<div class="mt-4">
-  <label for="exposureSlider" class="form-label">Exposure Level</label>
-  <input type="range" class="form-range" min="1" max="6" step="1" id="exposureSlider" value="3">
+<input type="range" class="form-range mt-4" min="1" max="6" step="0.01" id="exposureSlider" value="3">
+
+<!-- Hidden image sources -->
+<div style="display: none;">
+  <img src="assets/img/johnnie/hdr_1.jpg" id="img_1">
+  <img src="assets/img/johnnie/hdr_2.jpg" id="img_2">
+  <img src="assets/img/johnnie/hdr_3.jpg" id="img_3">
+  <img src="assets/img/johnnie/hdr_4.jpg" id="img_4">
+  <img src="assets/img/johnnie/hdr_5.jpg" id="img_5">
+  <img src="assets/img/johnnie/hdr_6.jpg" id="img_6">
 </div>
 
 <script>
+  const canvas = document.getElementById('hdrCanvas');
+  const ctx = canvas.getContext('2d');
   const slider = document.getElementById('exposureSlider');
-  const images = document.querySelectorAll('.hdr-image');
+  const exposures = Array.from({ length: 7 }, (_, i) => document.getElementById(`img_${i}`));
 
-  slider.addEventListener('input', () => {
-    const level = slider.value;
-    images.forEach((img) => img.classList.remove('active'));
-    document.getElementById(`img_${level}`).classList.add('active');
-  });
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+
+    // Set internal resolution for high-DPI screens
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+
+    // Scale drawing context to match internal resolution
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset any previous transform
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function blendImages(index, alpha) {
+    resizeCanvas();
+    const drawWidth = canvas.width / window.devicePixelRatio;
+    const drawHeight = canvas.height / window.devicePixelRatio;
+
+    ctx.clearRect(0, 0, drawWidth, drawHeight);
+
+    // Draw lower exposure
+    ctx.globalAlpha = 1 - alpha;
+    ctx.drawImage(exposures[index], 0, 0, drawWidth, drawHeight);
+
+    // Draw higher exposure
+    ctx.globalAlpha = alpha;
+    ctx.drawImage(exposures[index + 1], 0, 0, drawWidth, drawHeight);
+
+    ctx.globalAlpha = 1; // Reset alpha
+  }
+
+  function renderCurrentExposure() {
+    const value = parseFloat(slider.value);
+    const index = Math.floor(value);
+    const alpha = value - index;
+
+    if (index < exposures.length - 1) {
+      blendImages(index, alpha);
+    } else {
+      resizeCanvas();
+      const drawWidth = canvas.width / window.devicePixelRatio;
+      const drawHeight = canvas.height / window.devicePixelRatio;
+      ctx.clearRect(0, 0, drawWidth, drawHeight);
+      ctx.drawImage(exposures[index], 0, 0, drawWidth, drawHeight);
+    }
+  }
+
+  slider.addEventListener('input', renderCurrentExposure);
+  window.addEventListener('resize', renderCurrentExposure);
+
+  window.onload = () => {
+    exposures[3].onload = renderCurrentExposure;
+  };
 </script>
