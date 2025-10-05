@@ -20,7 +20,7 @@
   const canvas = document.getElementById('hdrCanvas');
   const ctx = canvas.getContext('2d');
   const slider = document.getElementById('exposureSlider');
-  const exposures = Array.from({ length: 7 }, (_, i) => document.getElementById(`img_${i}`));
+  const exposures = Array.from({ length: 6 }, (_, i) => document.getElementById(`img_${i + 1}`));
 
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
@@ -70,8 +70,14 @@
 
   slider.addEventListener('input', renderCurrentExposure);
   window.addEventListener('resize', renderCurrentExposure);
-
+  
   window.onload = () => {
-    exposures[3].onload = renderCurrentExposure;
+    Promise.all(
+      exposures.map((img) => {
+        return img.complete ? Promise.resolve() : new Promise((resolve) => (img.onload = resolve));
+      })
+    ).then(() => {
+      renderCurrentExposure();
+    });
   };
 </script>
