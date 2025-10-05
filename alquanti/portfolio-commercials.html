@@ -454,7 +454,7 @@
       <h2 class="mb-4">HDR Image Viewer</h2>
 
 <div class="canvas-wrapper">
-  <canvas id="hdrCanvas" class="rounded shadow w-100"></canvas>
+  <canvas id="hdrCanvas" class="rounded shadow w-100" style="height: 100%;"></canvas>
 </div>
 
 <input type="range" class="form-range mt-4" min="1" max="6" step="0.01" id="exposureSlider" value="3">
@@ -528,6 +528,7 @@
     exposures[3].onload = renderCurrentExposure;
   };
 </script>
+
 
       <p>
         In order to experience all the information contained in the HDR photograph displayed below, please move the
