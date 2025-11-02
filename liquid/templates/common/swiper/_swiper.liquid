@@ -4,7 +4,7 @@
   data-aos-delay="100"
 >
   <div class="swiper init-swiper">
-    {% include 'common/swiper/_swiper-config.liquid' %}
+    {% include 'common/swiper/_swiper-config.liquid', nb_slides: nb_slides %}
 
     <div class="swiper-wrapper">
       {% for img in swiper_images %}

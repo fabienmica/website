@@ -6,6 +6,7 @@
   </div>
   <!-- End Section Title -->
 
-  {% include 'common/swiper/_swiper.liquid', swiper_images: clients %}
+  {% assign nb_slides = "3,4,5" | split: "," %}
+  {% include 'common/swiper/_swiper.liquid', swiper_images: clients, nb_slides: nb_slides %}
 </section>
 <!-- /Testimonials Section -->

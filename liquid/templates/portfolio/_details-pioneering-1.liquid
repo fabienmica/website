@@ -5,13 +5,10 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Behind The Scenes</h2>
-    <!--
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-    -->
   </div>
   <!-- End Section Title -->
-
-  {% include 'common/swiper/_swiper.liquid' swiper_images: buf_projects %}
+  {% assign nb_slides = "2,3,4" | split: "," %}
+  {% include 'common/swiper/_swiper.liquid' swiper_images: buf_projects, nb_slides: nb_slides %}
 
 </section>
 <!-- /Behind-the-scenes Section -->
