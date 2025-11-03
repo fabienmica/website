@@ -15,8 +15,8 @@
     </p>
   </div>
   <!-- End Section Title -->
-
-  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects %}
+  {% assign nb_slides = "2,2,3,4" | split: "," %}
+  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects, nb_slides: nb_slides %}
 </section>
 <!-- /From Virtual To Reality Section -->
 
@@ -63,8 +63,8 @@
     </p>
   </div>
   <!-- End Section Title -->
-
-  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects %}
+  {% assign nb_slides = "2,2,3,4" | split: "," %}
+  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects, nb_slides: nb_slides %}
 </section>
 <!-- /Emilies -->
 
@@ -83,7 +83,7 @@
     </p>
   </div>
   <!-- End Section Title -->
-
-  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects %}
+  {% assign nb_slides = "2,2,3,4" | split: "," %}
+  {% include 'common/swiper/_swiper.liquid', swiper_images: buf_projects, nb_slides: nb_slides %}
 </section>
 <!-- /Cinecitta -->
