@@ -3,6 +3,20 @@ from liquid import Environment, CachingFileSystemLoader
 from lxml import etree
 import html5lib
 import shutil
+import datetime
+
+
+def generateSitemap(env, file, **kwargs):
+    # Render your Liquid template
+    template = env.get_template("sitemap.liquid")
+    raw_xml = template.render(**kwargs)
+
+    file_path_generated = "generated/" + file
+    with open(file_path_generated, "w") as f:
+        f.write(raw_xml)
+
+    # Copy file directly
+    shutil.copy(file_path_generated, "../alquanti")
 
 
 def generateIndex(env, name, file, **kwargs):
@@ -65,4 +79,28 @@ generateIndex(
     file="portfolio-commercials.html",
     title="Commercials",
     flying_hotel=flying_hotel,
+)
+
+pages = [
+    "https://fabienmicallef.com/",
+    "https://fabienmicallef.com/index.html",
+    "https://fabienmicallef.com/portfolio-commercials.html",
+    "https://fabienmicallef.com/portfolio-enwaii.html",
+    "https://fabienmicallef.com/portfolio-hold-the-world.html",
+    "https://fabienmicallef.com/portfolio-immersive.html",
+    "https://fabienmicallef.com/portfolio-pioneering.html",
+    "https://fabienmicallef.com/portfolio-vrsatile.html",
+]
+
+lastmod = datetime.date.today().isoformat()
+changefreq = "monthly"
+priority = 0.9
+
+generateSitemap(
+    env,
+    "sitemap.xml",
+    pages=pages,
+    lastmod=lastmod,
+    changefreq=changefreq,
+    priority=priority,
 )
